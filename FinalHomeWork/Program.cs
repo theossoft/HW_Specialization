@@ -25,17 +25,13 @@ void PrintArray(string[] arr)
     Console.WriteLine("]");
 }
 
-string[] StringLengthLessFour(string[] arr)
+string[] StringLengthLessCutLength(string[] arr, int cutLength)
 {
     int newArrLength = 0;
     for (int i = 0; i < arr.Length; i++)
     {
-        int count = 0;
-        for (int j = 0; j < arr[i].Length; j++)
-        {
-            count++;
-        }
-        if (count < 4)
+
+        if (arr[i].Length <= cutLength)
         {
             newArrLength++;
         }
@@ -45,12 +41,7 @@ string[] StringLengthLessFour(string[] arr)
     int newArrIndex = 0;
     for (int i = 0; i < arr.Length; i++)
     {
-        int count = 0;
-        for (int j = 0; j < arr[i].Length; j++)
-        {
-            count++;
-        }
-        if (count < 4)
+        if (arr[i].Length <= cutLength)
         {
             newArr[newArrIndex] = arr[i];
             newArrIndex++;
@@ -59,7 +50,7 @@ string[] StringLengthLessFour(string[] arr)
     return newArr;
 }
 
-PrintArray(StringLengthLessFour(a));
-PrintArray(StringLengthLessFour(b));
-PrintArray(StringLengthLessFour(c));
+PrintArray(StringLengthLessCutLength(a, 3));
+PrintArray(StringLengthLessCutLength(b, 3));
+PrintArray(StringLengthLessCutLength(c, 3));
 
